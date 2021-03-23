@@ -6,7 +6,10 @@
 const numbers = [1, 2, 3];
 
 // pricedItem: {price: number, taxable: boolean}
-const pricedItem = { price: 10, taxable: false };
+const pricedItem = {
+  price: 10,
+  taxable: false
+};
 
 // pricedItems: [{price: number, taxable: boolean}]
 const pricedItems = [pricedItem, pricedItem];
@@ -15,7 +18,10 @@ const pricedItems = [pricedItem, pricedItem];
 const calculateTotalImperative = (items, tax) => {
   let result = 0;
   for (const item of items) {
-    const { price, taxable } = item;
+    const {
+      price,
+      taxable
+    } = item;
     if (taxable) {
       result += price * Math.abs(tax);
     }
@@ -27,12 +33,12 @@ const calculateTotalImperative = (items, tax) => {
 /**********/
 // ASSIGNMENT
 /**********/
-
+// let result = objArray.map(({ foo }) => foo)
 // prices: (items: [{price: number}]) -> [number]
-const prices = undefined; // TODO - Implementation
+const prices = (items) => items.map(item => item.price);
 
 // sum: (numbers: [number]) -> number
-const sum = undefined; // TODO - Implementation
+const sum = (numbers) => [...numbers].reduce((sum, number) => sum + number, 0);
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
 const selectTaxable = undefined; // TODO - Implementation
@@ -59,3 +65,20 @@ export default {
   taxSum,
   calculateTotalDeclarative
 };
+
+// const items = [
+//   {
+//     price: 100,
+//     taxable: false
+//   },
+//   {
+//     price: 50,
+//     taxable: false
+//   },
+//   {
+//     price: 250,
+//     taxable: true
+//   }
+// ]
+
+// console.log(prices(items));
