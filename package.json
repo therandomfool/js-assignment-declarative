@@ -4,7 +4,8 @@
   "main": "build/index.js",
   "scripts": {
     "test": "mocha --require @babel/register",
-    "start": "nodemon --exec babel-node src/index.js"
+    "start": "nodemon --exec babel-node src/index.js",
+    "type": "module"
   },
   "author": "Will Marttala",
   "devDependencies": {

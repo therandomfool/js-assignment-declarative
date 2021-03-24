@@ -33,20 +33,20 @@ const calculateTotalImperative = (items, tax) => {
 /**********/
 // ASSIGNMENT
 /**********/
-// let result = objArray.map(({ foo }) => foo)
+
 // prices: (items: [{price: number}]) -> [number]
 const prices = (items) => items.map(item => item.price);
 
 // sum: (numbers: [number]) -> number
-const sum = (numbers) => [...numbers].reduce((sum, number) => sum + number, 0);
+const sum = (numbers) => numbers.reduce((sum, number) => sum + number, 0);
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
-const selectTaxable = undefined; // TODO - Implementation
+const selectTaxable = (items) => items.filter(item => item.taxable)
 
 // applyTax: (prices: [number], tax: number) -> [number]
-const applyTax = undefined; // TODO - Implementation
+const applyTax = (prices, tax) =>  prices.map(price => price * tax)
 
-// baseSum: TODO - Type Signature
+// baseSum: (items: [{prices}]) -> [number]
 const baseSum = items => sum(prices(items));
 
 // taxSum: TODO - Type Signature
