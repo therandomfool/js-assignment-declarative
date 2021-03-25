@@ -49,10 +49,10 @@ const applyTax = (prices, tax) =>  prices.map(price => price * tax)
 // baseSum: (items: [{prices}]) -> [number]
 const baseSum = items => sum(prices(items));
 
-// taxSum: (items: [number], tax: number, prices: [number]) -> number
+// taxSum: (items: [{prices: number, taxable: boolean}], tax: number) -> number
 const taxSum = (items, tax) => sum(applyTax(prices(selectTaxable(items)), tax));
 
-// calculateTotalDeclarative:(items: [number], tax: number) -> number
+// calculateTotalDeclarative:(items: [{prices: number, taxable: boolean}], tax: number) -> number
 const calculateTotalDeclarative = (items, tax) =>
   baseSum(items) + taxSum(items, Math.abs(tax));
 
